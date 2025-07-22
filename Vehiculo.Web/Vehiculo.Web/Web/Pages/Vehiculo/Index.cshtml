@@ -1,0 +1,41 @@
+﻿@page
+@model Web.Pages.Vehiculo.IndexModel
+@{
+}
+
+<h1 class="text-center my-4">Listado de Vehículos</h1>
+
+<div class="container">
+    <div class="row">
+        @if (Model.vehiculos != null)
+        {
+            @foreach (var vehiculo in Model.vehiculos)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">
+                                @Html.DisplayFor(modelo => vehiculo.Marca) - @Html.DisplayFor(modelo => vehiculo.Modelo)
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                Año: @Html.DisplayFor(modelo => vehiculo.Anio)
+                            </h6>
+                            <p class="card-text">
+                                <strong>Placa:</strong> @Html.DisplayFor(modelo => vehiculo.Placa)
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0 d-flex justify-content-between">
+                            <a class="btn btn-sm btn-outline-primary" asp-page="./Detalle" asp-route-id="@vehiculo.Id">Detalle</a>
+                            <a class="btn btn-sm btn-outline-warning" asp-page="./Editar" asp-route-id="@vehiculo.Id">Editar</a>
+                            <a class="btn btn-sm btn-outline-danger" asp-page="./Eliminar" asp-route-id="@vehiculo.Id">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-center">No hay vehículos disponibles.</p>
+        }
+    </div>
+</div>
