@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE ActualizarMarca
+﻿
+CREATE PROCEDURE ActualizarMarca
     @Id UNIQUEIDENTIFIER,
     @Nombre VARCHAR(MAX)
 AS
