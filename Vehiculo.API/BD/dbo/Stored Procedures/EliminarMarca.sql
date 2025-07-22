@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE EliminarMarca
+    @Id UNIQUEIDENTIFIER
+AS
+BEGIN
+    DELETE FROM Marca
+    WHERE Id = @Id;
+END

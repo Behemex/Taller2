@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE ObtenerMarcaPorId
+    @Id UNIQUEIDENTIFIER
+AS
+BEGIN
+    SELECT * FROM Marca
+    WHERE Id = @Id;
+END

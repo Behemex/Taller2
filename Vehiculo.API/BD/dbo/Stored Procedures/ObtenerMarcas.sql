@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE ObtenerMarcas
+AS
+BEGIN
+    SELECT * FROM Marca;
+END
